@@ -1,0 +1,12 @@
+<div>
+	<ng-container *ngIf="todo$ | async as todo">
+		<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+			<mat-form-field appearance="fill" class="w-100">
+				<mat-label>Name</mat-label>
+				<input matInput formControlName="name" type="text" placeholder="My todo name" required>
+			</mat-form-field>
+
+			<button type="submit" mat-raised-button color="primary" class="w-100" [disabled]="todo.status == 'loading'">Save</button>
+		</form>
+	</ng-container>
+</div>

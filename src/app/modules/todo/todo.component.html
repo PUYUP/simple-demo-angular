@@ -1,0 +1,16 @@
+<div class="container">
+	<section class="py-5">
+		<div class="d-flex align-items-center border-bottom pb-2">
+			<div>
+				<button mat-icon-button class="me-2" [routerLink]="['/home']">
+					<mat-icon>arrow_back</mat-icon>
+				</button>
+
+				<span class="text-uppercase">Todo List</span>
+			</div>
+
+			<button class="ms-auto" mat-raised-button color="primary" (click)="onAddNewTodo()">Add New Todo</button>
+		</div>
+		<app-todo-list></app-todo-list>
+	</section>
+</div>

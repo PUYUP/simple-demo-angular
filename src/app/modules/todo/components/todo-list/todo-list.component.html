@@ -1,0 +1,13 @@
+<ng-container *ngIf="todo$ | async as todo">
+	<div *ngIf="todo.status == 'loading'" class="d-flex justify-content-center">
+		<mat-spinner [diameter]="30"></mat-spinner>
+	</div>
+
+	<ng-container *ngIf="todo.data.length > 0 && todo.status == 'idle'">
+		<mat-list role="list">
+			<ng-container *ngFor="let item of todo.data">
+				<app-todo-item [todo]="item"></app-todo-item>
+			</ng-container>
+		</mat-list>
+	</ng-container>
+</ng-container>

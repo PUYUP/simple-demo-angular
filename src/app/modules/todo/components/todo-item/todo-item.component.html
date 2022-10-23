@@ -1,0 +1,24 @@
+<mat-list-item
+	role="listitem" 
+	checkboxPosition="before"
+>
+	<div class="d-flex align-items-center w-100">
+		<div>
+			<mat-checkbox (change)="onSelected($event, todo)" [checked]="todo?.isDone">
+				{{ todo?.name }}
+			</mat-checkbox>
+		</div>
+
+		<div class="ms-auto">
+			<div class="d-flex gap-3">
+				<button mat-icon-button color="warn" (click)="onDelete(todo?.id)">
+					<mat-icon fontIcon="delete"></mat-icon>
+				</button>
+
+				<button mat-icon-button (click)="onEdit(todo)">
+					<mat-icon fontIcon="edit"></mat-icon>
+				</button>
+			</div>
+		</div>
+	</div>
+</mat-list-item>
